@@ -190,3 +190,4 @@ C:\Users\Migue\OneDrive\Skrivbord\Medieinstitutet SYS25\EntityFramework\v.3\Api_
 C:\Users\Migue\OneDrive\Skrivbord\Medieinstitutet SYS25\EntityFramework\v.3\Api_ex_2\CompanyTracker\bin\Debug\net10.0\System.Security.Permissions.dll
 C:\Users\Migue\OneDrive\Skrivbord\Medieinstitutet SYS25\EntityFramework\v.3\Api_ex_2\CompanyTracker\bin\Debug\net10.0\System.Windows.Extensions.dll
 C:\Users\Migue\OneDrive\Skrivbord\Medieinstitutet SYS25\EntityFramework\v.3\Api_ex_2\CompanyTracker\bin\Debug\net10.0\runtimes\win\lib\net9.0\System.Windows.Extensions.dll
+C:\Users\Migue\OneDrive\Skrivbord\Medieinstitutet SYS25\EntityFramework\v.3\Api_ex_2\CompanyTracker\obj\Debug\net10.0\CompanyTracker.sourcelink.json
