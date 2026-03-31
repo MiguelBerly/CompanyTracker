@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CompanyTracker", "CompanyTracker\CompanyTracker.csproj", "{B7DB4B22-5EFC-4729-8A24-FB6A10E1EABF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CompanyTracker.Tests", "CompanyTracker.Tests\CompanyTracker.Tests.csproj", "{A1CD005F-8ABF-4105-99AB-ABF86861455B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B7DB4B22-5EFC-4729-8A24-FB6A10E1EABF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B7DB4B22-5EFC-4729-8A24-FB6A10E1EABF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B7DB4B22-5EFC-4729-8A24-FB6A10E1EABF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B7DB4B22-5EFC-4729-8A24-FB6A10E1EABF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A1CD005F-8ABF-4105-99AB-ABF86861455B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A1CD005F-8ABF-4105-99AB-ABF86861455B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A1CD005F-8ABF-4105-99AB-ABF86861455B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A1CD005F-8ABF-4105-99AB-ABF86861455B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
