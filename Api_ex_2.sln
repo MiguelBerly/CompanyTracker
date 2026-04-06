@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CompanyTracker", "CompanyTracker\CompanyTracker.csproj", "{B7DB4B22-5EFC-4729-8A24-FB6A10E1EABF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CompanyTracker.Api", "CompanyTracker.Api\CompanyTracker.Api.csproj", "{B7DB4B22-5EFC-4729-8A24-FB6A10E1EABF}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CompanyTracker.Tests", "CompanyTracker.Tests\CompanyTracker.Tests.csproj", "{A1CD005F-8ABF-4105-99AB-ABF86861455B}"
 EndProject

@@ -1,7 +1,7 @@
 using System.Net;
 using System.Net.Http.Json;
-using CompanyTracker.Data;
-using CompanyTracker.Domain.DTO;
+using CompanyTracker.Api.Data;
+using CompanyTracker.Api.Domain.DTO;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace CompanyTracker.Tests;
