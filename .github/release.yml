@@ -1,0 +1,19 @@
+changelog:
+  categories:
+    - title: Nya funktioner
+      labels:
+        - feature
+        - enhancement
+
+    - title: Buggfixar
+      labels:
+        - bug
+        - fix
+
+    - title: Dokumentation
+      labels:
+        - documentation
+
+  exclude:
+    labels:
+      - skip-changelog
