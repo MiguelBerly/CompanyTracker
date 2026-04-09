@@ -93,6 +93,7 @@ builder.Services.AddScoped<CompanyManager>();
 
 var app = builder.Build();
 
+app.UseStaticFiles();
 app.UseAuthentication();
 app.UseAuthorization();
 

@@ -1,4 +1,6 @@
-Api_ex_2.sln.DotSettings.user
+*.user
 .idea/
 bin/
 obj/
+publish/
+CLAUDE.md

@@ -12,5 +12,7 @@ public class CompanyWithApplications
 
     [JsonPropertyName("applied")]
     public bool Applied { get; set; }
+    [JsonPropertyName("responded")]
+    public bool Responded { get; set; }
 }
 

@@ -108,7 +108,8 @@ public class ServicesRepository : IServicesRepository
             {
                 CompanyId = x.Id,
                 Name =  x.Name,
-                Applied =  x.Applications.IsApplied
+                Applied =  x.Applications.IsApplied,
+                Responded =  x.Applications.CompanyResponded
             }).ToListAsync();
         
         return companies;

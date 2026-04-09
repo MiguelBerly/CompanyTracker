@@ -65,7 +65,8 @@ Releases use semantic versioning tags (vX.X.X) with automatic patch increment (e
 ## Progress Checklist
 - [ ] Delete `dotnet.yml`
 - [x] Create `Dockerfile` (multi-stage, .NET 10)
-- [ ] Add minimal frontend (static HTML served by API)
+- [x] Add minimal frontend (static HTML served by API) — `wwwroot/index.html`, `UseStaticFiles()` added to `Program.cs`, `CompanyWithApplications` extended with `Responded` field
+- [ ] (Optional) Add `UseDefaultFiles()` to serve page at `/` instead of `/index.html`
 - [ ] Set up Render account + service + managed Postgres
 - [ ] Refactor `build.yml` into CI workflow (PR to main: build + test)
 - [ ] Create CD workflow (push to main: build Docker image → push → Render deploys)

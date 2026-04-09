@@ -2,9 +2,41 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Company Tracker</title>
+    <style>
+        body { font-family: sans-serif; max-width: 700px; margin: 40px auto; padding: 0
+        16px; }
+        table { width: 100%; border-collapse: collapse; margin-top: 16px; }
+        th, td { text-align: left; padding: 8px 12px; border-bottom: 1px solid #ddd; }
+        th { background: #f4f4f4; }
+    </style>
 </head>
 <body>
+    <h1>Company Tracker</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Company</th>
+                <th>Applied</th>
+                <th>Responded</th>
+            </tr>
+        </thead>
+        <tbody id="rows"><tr><td colspan="3">Loading...</td></tr></tbody>
+    </table>
+
+    <script>
+        fetch('/api/companies/applications')
+            .then(res => res.json())
+            .then(data => {
+                const tbody = document.getElementById('rows');
+                tbody.innerHTML = data.map(c => `
+                <tr>
+                    <td>${c.name}</td>
+                    <td>${c.applied ? '✓' : ''}</td>
+                    <td>${c.responded ? '✓' : ''}</td>
+                </tr>`).join('');
+            })
+    </script>
 
 </body>
 </html>
