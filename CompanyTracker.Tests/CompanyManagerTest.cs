@@ -1,7 +1,7 @@
-using CompanyTracker.Domain;
-using CompanyTracker.Domain.DTO;
-using CompanyTracker.Domain.Repositories;
-using CompanyTracker.Exceptions;
+using CompanyTracker.Api.Domain;
+using CompanyTracker.Api.Domain.DTO;
+using CompanyTracker.Api.Domain.Repositories;
+using CompanyTracker.Api.Exceptions;
 using Moq;
 
 namespace CompanyTracker.Tests;

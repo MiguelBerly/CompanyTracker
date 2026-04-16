@@ -1,0 +1,34 @@
+name: CD
+on:
+  push:  
+    tags:
+      - v*
+  workflow_dispatch: 
+  
+
+jobs:
+  publish-and-deploy:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: checkout
+        uses: actions/checkout@v4
+        
+      - name: Log in to GHCR
+        uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+          
+      - name: Build and push Docker image
+        uses: docker/build-push-action@v5
+        with:
+          context: .
+          push: true
+          tags: |
+            ghcr.io/miguelberly/companytracker:latest
+            ghcr.io/miguelberly/companytracker:${{ github.ref_name }}
+          
+      - name: Trigger Render deploy
+        run: curl -X POST ${{ secrets.RENDER_DEPLOY_HOOK_URL }}
