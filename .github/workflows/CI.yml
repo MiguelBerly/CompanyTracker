@@ -1,13 +1,13 @@
-name: Build and Artifact
+name: CI
 
 on:
-  push:
+  pull_request:
     branches:
       - main
   workflow_dispatch:
 
 jobs:
-  build:
+  build-and-test:
     runs-on: ubuntu-latest
 
     steps:
@@ -27,12 +27,3 @@ jobs:
 
       - name: Test
         run: dotnet test --configuration Release --no-build
-
-      - name: Publish
-        run: dotnet publish --configuration Release --output ./publish
-
-      - name: Upload artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: published-app
-          path: ./publish
