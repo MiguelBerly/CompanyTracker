@@ -134,6 +134,7 @@ using (var scope = app.Services.CreateScope())
     var dbContext = scope.ServiceProvider.GetRequiredService<AppDbContext>();
     if (dbContext.Database.IsRelational())
         await dbContext.Database.MigrateAsync();
+    await DbSeeder.SeedAsync(dbContext);
 }
 
 // Configure the HTTP request pipeline.
@@ -144,11 +145,6 @@ if (app.Environment.IsDevelopment())
     {
         options.EnablePersistAuthorization();
     });
-    using (var scope = app.Services.CreateScope())
-    {
-        var dbContext = scope.ServiceProvider.GetRequiredService<AppDbContext>();
-        await DbSeeder.SeedAsync(dbContext);
-    }
 }
 
 AppEndPoints.Map(app);

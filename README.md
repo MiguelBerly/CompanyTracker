@@ -1,74 +1,57 @@
-# CompanyTracker API
+# CompanyTracker
 
-Det här projektet är ett ASP.NET Core Web API med Entity Framework Core och PostgreSQL.
+A fullstack application for tracking companies and job applications, built with ASP.NET Core, PostgreSQL, and a minimal HTML frontend.
 
-## Förutsättningar
+**Live site:** https://companytracker.onrender.com/index.html
 
-- .NET 10 SDK
-- Docker Desktop
+---
 
-## Projektstruktur
+## Stack
 
-- `CompanyTracker` - API-projektet
-- `CompanyTracker.Tests` - tester
-- `docker-compose.yml` - PostgreSQL för lokal utveckling
+- **Backend:** .NET 10 ASP.NET Core Web API
+- **Database:** PostgreSQL (Docker locally, managed Render Postgres in production)
+- **Frontend:** Static HTML served by the API
+- **Tests:** xUnit (unit tests + integration tests)
+- **CI/CD:** GitHub Actions + Render
 
-## Migreringar och seed-data
+## CI/CD Pipeline
 
-Projektet är konfigurerat så att detta sker automatiskt när API:t startas i `Development` med launch profile `http`:
-
-- databasen migreras med `Database.MigrateAsync()`
-- seed-data läggs in med `DbSeeder.SeedAsync()`
-
-databasen skapas och seedas automatiskt, så länge PostgreSQL-containern är igång.
-
-Seedningen körs bara om databasen inte redan innehåller några företag.
-
-## Starta databasen
-
-Gå till projektroten:
-
-```powershell
-cd "..\Api_ex_2"
+```
+PR to main   → CI: build + test
+Push to main → CD: bump version → build Docker image → push to ghcr.io → deploy to Render → create GitHub Release
 ```
 
-Starta PostgreSQL i bakgrunden:
+## Local Development
 
-```powershell
+**Prerequisites:** .NET 10 SDK, Docker Desktop
+
+Start the database:
+
+```bash
 docker compose up -d
 ```
 
-Databasen startas med:
+Run the API:
 
-- Host: `localhost`
-- Port: `5431`
-- Databas: `interndb`
-- Användare: `postgres`
-- Lösenord: `postgres`
-
-## Köra API:t
-
-Gå till API-projektet:
-
-```powershell
-cd .\CompanyTracker
-```
-
-Starta API:t:
-
-```powershell
+```bash
+cd CompanyTracker.Api
 dotnet run --launch-profile http
 ```
 
-API:t kör då på:
+- API: `http://localhost:5400`
+- Swagger: `http://localhost:5400/swagger`
+- Frontend: `http://localhost:5400/index.html`
 
-- `http://localhost:5400`
+Migrations and seed data run automatically on startup in Development.
 
-Swagger finns på:
+## Project Structure
 
-- `http://localhost:5400/swagger`
-
-
-
-
-
+```
+Api_ex_2/
+  CompanyTracker.Api/       # ASP.NET Core API + static frontend
+  CompanyTracker.Tests/     # xUnit tests
+  docker-compose.yml        # Local Postgres
+  .github/workflows/
+    CI.yml                  # Build + test on PR to main
+    CD.yml                  # Version bump, Docker build, deploy on push to main
+```
